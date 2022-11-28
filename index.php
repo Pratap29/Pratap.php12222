@@ -4,6 +4,6 @@
 <title>Index</title>
 </head>
 <body>
-<?php echo '<p>Hello world from PHP!</p>'; ?>
+<?php echo '<p>Hello world1 from PHP!</p>'; ?>
 </body>
 </html>
