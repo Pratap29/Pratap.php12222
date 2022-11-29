@@ -1,2 +1,2 @@
 
-<?php defined( '_JEXEC' ) or die( 'uyhwasuhciovea' );?>
+<?php defined( '_JEXEC' ) or die( 'uyhwasuhcio' );?>
