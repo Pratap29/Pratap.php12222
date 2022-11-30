@@ -1,4 +1,4 @@
 <?php
-  echo "Welcome to tecadmin.net </br>";
-  echo "Running PHP with Apache on Docker";
+  echo "Welcome to Jagadesh </br>";
+  echo "Running DevOps lifecycle with ci/cd";
 ?>
