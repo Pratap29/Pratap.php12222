@@ -1,8 +1,10 @@
 <?php  
-$str="hello string";  
-$x=200;  
-$y=44.6;  
-echo "string is: $str <br/>";  
-echo "integer is: $x <br/>";  
-echo "float is: $y <br/>";  
+$name="Cat";  
+${$name}="Dog";  
+${${$name}}="Monkey";  
+echo $name. "<br>";  
+echo ${$name}. "<br>";  
+echo $Cat. "<br>";  
+echo ${${$name}}. "<br>";  
+echo $Dog. "<br>";  
 ?>  
