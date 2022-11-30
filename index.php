@@ -1,4 +1,4 @@
 <?php
-  echo "Welcome to Jagadesh </br>";
+  echo "Welcome to Agileprocess </br>";
   echo "Running DevOps lifecycle with ci/cd";
 ?>
