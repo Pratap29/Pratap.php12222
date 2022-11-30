@@ -5,7 +5,7 @@
 require_once("vendor/autoload.php");
 require_once("Qccheck.php");
 
-    $conn = mysqli_connect("localhost","root1","","gtvingestdb") or die("Database Cannot be Connected - ".mysqli_error($conn));
+    $conn = mysqli_connect("localhost","root","","gtvingestdb") or die("Database Cannot be Connected - ".mysqli_error($conn));
 
 // Create connection
 // $conn = new mysqli($servername, $username, $password, $dbname);
