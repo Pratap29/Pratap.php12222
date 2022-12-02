@@ -7,7 +7,7 @@ echo '<span style="font-size: 50px;"> ' . $string.  ', <a href="something.php">N
 
 //Change the font color using PHP, HTML and css through echo
 echo "<br>";
-echo '<span style="color: red; font-size: 50px;"> ' . $string.  ', <a href="something.php">New Page</a></span>';
+echo '<span style="color: blue; font-size: 50px;"> ' . $string.  ', <a href="something.php">New Page</a></span>';
 ?>
 
 
