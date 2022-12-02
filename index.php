@@ -1,36 +1,84 @@
+<!Doctype html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<title> Arithmetic Calculator </title>
+</head>
+
+<body>
+
+<p align="center">
+Arithmetic Calculator (Plus / Minus / Multiply / Division)
+</p>
+
+<br>
 <?php
-$connect=mysql_connect("servername","username","password") OR die ("connection failed");
-$db=mysql_select_db("database_name", $connect);
-
-if(isset($_POST['submit']))
+@$first=$_POST['first'];
+@$second=$_POST['second'];
+if(isset($_POST['plus']))
 {
-
-//the following code will automatically generate a random password and will store into database.
-
-$pass=mt_rand(1000000, 2555555);
-$name=$_POST['name'];
-$email=$_POST['email'];
-$class=$_POST['class'];
-
-$sql="INSERT INTO students(name,email,class,password) VALUES('$name','$email','$class','$pass')";
-$query=mysql_query($sql);
-if($query)
-{
-echo "New data is created." ;
+$plus=$first+$second;
+echo '<table align="center">
+<tr>
+<td style="color:red;">Answer is: &nbsp;&nbsp;&nbsp;</td>
+<td><input type="text" value="'.$plus.'" readonly/></td>
+</tr>
+</table>';
 }
-else
+else if(isset($_POST['minus']))
 {
-echo "Error !!" ;
+$minus=$first-$second;
+echo '<table align="center">
+<tr>
+<td style="color:red;">Answer is: &nbsp;&nbsp;&nbsp;</td>
+<td><input type="text" value="'.$minus.'" readonly/></td>
+</tr>
+</table>';
 }
+else if(isset($_POST['multiply']))
+{
+$multiply=$first*$second;
+echo '<table align="center">
+<tr>
+<td style="color:red;">Answer is: &nbsp;&nbsp;&nbsp;</td>
+<td><input type="text" value="'.$multiply.'" readonly/></td>
+</tr>
+</table>';
+}
+else if(isset($_POST['divide']))
+{
+$divide=$first/$second;
+echo '<table align="center">
+<tr>
+<td style="color:red;">Answer is: &nbsp;&nbsp;&nbsp;</td>
+<td><input type="text" value="'.$divide.'" readonly/></td>
+</tr>
+</table>';
 }
 ?>
 
 <form action="" method="post">
-
-<input type="text" name="name" placeholder="Full Name">
-<input type="email" name="email" placeholder="Enter your email-id">
-<input type="text" name="class" placeholder="Enter class name">
-<input type="submit" name="submit" value="Click Here">
-
+<table align="center">
+<tr>
+<td> First Value </td>
+<td><input type="text" name="first" /></td>
+</tr>
+<tr>
+<td> Second Value </td>
+<td><input type="text" name="second" /></td>
+</tr>
+</table>
+<table align="center">
+<tr>
+<td><input type="submit" name="plus" value="+"></td>
+<td><input type="submit" name="minus" value="-"></td>
+<td><input type="submit" name="multiply" value="*"></td>
+<td><input type="submit" name="divide" value="/"></td>
+</tr>
+</table>
 </form>
+
+</body>
+</html>
 
