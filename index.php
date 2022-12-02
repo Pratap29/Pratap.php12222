@@ -1,20 +1,17 @@
+<?php
+// Start the session
+session_start();
+?>
+<!DOCTYPE html>
 <html>
-   <body>
-      
-      <?php
-         $note=<<<XML
-         
-         <note>
-            <to>Gopal K Verma</to>
-            <from>Sairamkrishna</from>
-            <heading>Project submission</heading>
-            <body>Please see clearly </body>
-         </note>
-         
-         XML;
-         $xml=simplexml_load_string($note);
-         print_r($xml);
-      ?>
-		
-   </body>
+<body>
+
+<?php
+// Set session variables
+$_SESSION["favcolor"] = "green";
+$_SESSION["favanimal"] = "cat";
+echo "Session variables are set.";
+?>
+
+</body>
 </html>
