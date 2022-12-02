@@ -1,47 +1,36 @@
-<html>
+<?php
+$connect=mysql_connect("servername","username","password") OR die ("connection failed");
+$db=mysql_select_db("database_name", $connect);
 
-<head>
-<title>Dynamic Background Color Change</title>
-</head>
+if(isset($_POST['submit']))
+{
 
-<body bgcolor="<?php
-if (isset($_POST['btn']))
+//the following code will automatically generate a random password and will store into database.
+
+$pass=mt_rand(1000000, 2555555);
+$name=$_POST['name'];
+$email=$_POST['email'];
+$class=$_POST['class'];
+
+$sql="INSERT INTO students(name,email,class,password) VALUES('$name','$email','$class','$pass')";
+$query=mysql_query($sql);
+if($query)
 {
-$col=$_POST['t1'];
-if(isset($col))
-{
-echo $p=$col;
+echo "New data is created." ;
 }
 else
 {
-echo $p="#ffffff";
+echo "Error !!" ;
 }
 }
-?>">
+?>
 
-<form action="" method="post" >
-<strong> Choose Color to Change Background :- </strong>
-<select name="t1">
-<option value="">Choose Color </option>
-<option value="#000000"> Black </option>
-<option value="#0000ff"> Blue </option>
-<option value="#a52a2a"> Brown </option>
-<option value="#00ffff"> Cyan </option>
-<option value="#006400"> Dark Green </option>
-<option value="#808080"> Grey </option>
-<option value="#008000"> Green </option>
-<option value="#ffa500"> Orange </option>
-<option value="#ffc0cb"> Pink </option>
-<option value="#800080"> Purple </option>
-<option value="#ff0000"> Red </option>
-<option value="#ffffff"> White </option>
-<option value="#ffff00"> Yellow </option>
-  <option value="#ffff00"> Volcano </option>  
-</select>
-<br>
-<input type="submit" name="btn" value="Submit">
+<form action="" method="post">
+
+<input type="text" name="name" placeholder="Full Name">
+<input type="email" name="email" placeholder="Enter your email-id">
+<input type="text" name="class" placeholder="Enter class name">
+<input type="submit" name="submit" value="Click Here">
+
 </form>
-
-</body>
-</html>
 
