@@ -1,5 +1,5 @@
 <?php
-$servername = "43.205.233.97";
+$servername = "172.31.42.231";
 $username = "phpmyadmin";
 $password = "password";
 
