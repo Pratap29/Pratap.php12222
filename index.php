@@ -1,5 +1,5 @@
 <?php
-$servername = "ubuntu";
+$servername = "localhost";
 $username = "root";
 $password = "password";
 $dbname = "phpmyadmin";
