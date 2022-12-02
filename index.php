@@ -1,70 +1,41 @@
 <?php
-include ('dbconnect.php');
-if(isset($_POST['']))
+
+if(isset($_POST['sub']))
 {
-user_login($_POST);
-}
-?>
+$name=$_POST['name'];
+$email=$_POST['email'];
+$phone=$_POST['phone'];
+$message=$_POST['message'];
 
-<html>
-<head> </head>
-<body>
-<section class="bg-grey">
-<div class="main">
-<div class="container">
-<div class="col-md-12">
-<div class="form-content-box">
-<div class="login-header">
-<h3 class="text-center"> Login </h3>
-</div>
-<div class="details">
-<form action="" method="post">
-<div class="form-group">
-<input type="email" name="email" placeholder="Enter email" autocomplete="off" required 
-class="form-control" pattern="[a-z0-9._%+-]+@[a-z.-]+\.[a-z]{2,3}$">
-</div>
-<div class="form-group">
-<input type="password" name="password" class="form-control" placeholder="Password" required>
-</div>
+$msg="Name: ". $name . "<br>" . "Email Id: ". $email . "<br>" . "Phone No: ". $phone . "<br>" .
+ "Message: ". $message;
 
-<div class="form-group">
-<button type="submit" name="login" class="btn btn-submit">login</button>
-</div>
-</form>
-</div>
-
-<div class="login-footer">
-</div>
-</div>
-</div>
-</div>
-</div>
-<section>
-<div class="clearfix"></div>
-</body>
-</html>
-
-<?php
-
-function user_login($data){
-$email = $data['email'];
-$password = md5($data['password']);
-$login_qry = "select * from users where email='$email' AND password='$password'";
-$login=mysqli_query($GLOBALS['db'],$login_qry) or die ("mysql error2".mysqli_error($GLOBALS['db']));
-$result=mysqli_fetch_array($login);
-if(mysqli_num_rows($login)>0)
+$to = "contact@ontimeinfotech.com";
+$subject = "Inquiry Received";
+$sender = "$email";
+$headers = "MIME-Version: 1.0" . "\r\n";
+$headers .= "Content-type: text/html; charset=iso-8859-1" . "\r\n";
+$headers .= "from: " . $sender."\n";
+if(mail($to, $subject, $msg, $headers))
 {
-$_SESSION['user']['id']=$result['id'];
-
-echo '<script type="text/javascript">window.location.href="home.php";</script>';
-
+echo "Email has been sent.";
 }
 else
 {
-$_SESSION['user']['id']="";
-echo '<script type="text/javascript">alert("Please Enter Correct Username and Password");</script>';
+echo "Error !!";
 }
 }
 
 ?>
+
+<h1> Enquiry Form </h1> <br/><br/>
+
+<form action="" method="post">
+<input type="text" name="name" placeholder="Name" required><br><br>
+<input type="email" name="email" placeholder="Email" required><br><br>
+<input type="phone" name="phone" placeholder="Mobile" maxlength="10" required><br><br>
+<textarea name="message" ></textarea><br><br>
+<input type="submit" name="sub" value="Submit">
+
+</form>
 
