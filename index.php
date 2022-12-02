@@ -26,7 +26,7 @@ elseif($today == "Thursday")
 {
 $bgcolor = "#E6EDFF";
 }
-elseif($today == "Friday")
+elseif($today == "Saturday")
 {
 $bgcolor = "#E9FFE6";
 }
