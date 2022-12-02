@@ -1,13 +1,27 @@
-<?php
-$string= "Welcome! This page doesn't exist!";
-echo $string."<br>";
-
-//Change the fontsize using PHP, HTML and css through echo
-echo '<span style="font-size: 50px;"> ' . $string.  ', <a href="something.php">New Page</a></span>';
-
-//Change the font color using PHP, HTML and css through echo
-echo "<br>";
-echo '<span style="color: green; font-size: 50px;"> ' . $string.  ', <a href="something.php">New Page</a></span>';
-?>
+<html>
+   <body>
+   
+      <?php
+         srand( microtime() * 1000000 );
+         $num = rand( 1, 4 );
+         
+         switch( $num ) {
+            case 1: $image_file = "/php/images/logo.png";
+               break;
+            
+            case 2: $image_file = "/php/images/php.jpg";
+               break;
+            
+            case 3: $image_file = "/php/images/logo.png";
+               break;
+            
+            case 4: $image_file = "/php/images/php.jpg";
+               break;
+         }
+         echo "Random Image : <img src=$image_file />";
+      ?>
+      
+   </body>
+</html>
 
 
