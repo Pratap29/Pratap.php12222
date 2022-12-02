@@ -3,8 +3,8 @@
 <?php
 //$bg = $_COOKIE['bg'];
 //$fg = $_COOKIE['fg'];
-$bg="red";
-$fg="black";
+$bg="black";
+$fg="red";
 ?>
 
 <body bgcolor="<?php=$bg ?>" text="<?php= $fg ?>">
