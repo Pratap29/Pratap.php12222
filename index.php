@@ -36,6 +36,7 @@ echo $p="#ffffff";
 <option value="#ff0000"> Red </option>
 <option value="#ffffff"> White </option>
 <option value="#ffff00"> Yellow </option>
+  <option value="#ffff00"> Volcano </option>  
 </select>
 <br>
 <input type="submit" name="btn" value="Submit">
