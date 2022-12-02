@@ -1,25 +1,17 @@
-<?php
-$servername = "localhost";
-$username = "root";
-$password = "password";
-$dbname = "phpmyadmin";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
-
-$sql = "INSERT INTO MyGuests (firstname, lastname, email)
-VALUES ('John', 'Doe', 'john@example.com')";
-
-if ($conn->query($sql) === TRUE) {
-  $last_id = $conn->insert_id;
-  echo "New record created successfully. Last inserted ID is: " . $last_id;
-} else {
-  echo "Error: " . $sql . "<br>" . $conn->error;
-}
-
-$conn->close();
-?>
+<html>
+   <body>
+      
+      <?php
+         $a = 0;
+         $b = 0;
+         
+         for( $i = 0; $i<5; $i++ ) {
+            $a += 10;
+            $b += 5;
+         }
+         
+         echo ("At the end of the loop a = $a and b = $b" );
+      ?>
+   
+   </body>
+</html>
