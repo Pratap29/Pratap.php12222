@@ -1,6 +1,6 @@
 <?php  
- $x="Rajasthan";  
-$$x="Jaipur";  
+ $x="Bihar";  
+$$x="Patna";  
 echo $x. "<br>";  
 echo $$x. "<br>";  
 echo "Capital of $x is " . $$x;  
