@@ -12,7 +12,7 @@ if (!$conn) {
 }
 
 // sql to create table
-$sql = "CREATE TABLE MyGuests (
+$sql = "CREATE TABLE Prathap (
 id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 firstname VARCHAR(30) NOT NULL,
 lastname VARCHAR(30) NOT NULL,
@@ -21,7 +21,7 @@ reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 )";
 
 if (mysqli_query($conn, $sql)) {
-  echo "Table MyGuests created successfully";
+  echo "Table Prathap created successfully";
 } else {
   echo "Error creating table: " . mysqli_error($conn);
 }
