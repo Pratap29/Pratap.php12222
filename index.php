@@ -9,7 +9,7 @@ $fg="red";
 
 <body bgcolor="<?php=$bg ?>" text="<?php= $fg ?>">
 
-<h1>This is some text</h1>
+<h1>Prathap Reddy</h1>
 
 </body>
 </html>
