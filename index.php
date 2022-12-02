@@ -1,7 +1,11 @@
-if blablabla {
+<?php
+function familyName($fname) {
+  echo "$fname Refsnes.<br>";
+}
 
- echo '<body style="background-color:white">';
-}
-else {
- echo '<body style="background-color:orange">';
-}
+familyName("Venkatreddy");
+familyName("Vijayalaxmi");
+familyName("Padma");
+familyName("Prasad");
+familyName("Prathap");
+?>
