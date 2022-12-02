@@ -2,16 +2,19 @@
    <body>
       
       <?php
-         $a = 0;
-         $b = 0;
+         $note=<<<XML
          
-         for( $i = 0; $i<5; $i++ ) {
-            $a += 10;
-            $b += 5;
-         }
+         <note>
+            <to>Gopal K Verma</to>
+            <from>Sairamkrishna</from>
+            <heading>Project submission</heading>
+            <body>Please see clearly </body>
+         </note>
          
-         echo ("At the end of the loop a = $a and b = $b" );
+         XML;
+         $xml=simplexml_load_string($note);
+         print_r($xml);
       ?>
-   
+		
    </body>
 </html>
