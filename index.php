@@ -102,3 +102,9 @@ jQuery.ajax({
 </body>
 </html>
 
+<?php
+if(isset($_POST['color'])){
+echo $_POST['color'];
+}
+?>
+
