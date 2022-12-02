@@ -1,6 +1,6 @@
 <?php
-$servername = "localhost";
-$username = "username";
+$servername = "43.205.233.97";
+$username = "phpmyadmin";
 $password = "password";
 
 // Create connection
