@@ -1,9 +1,24 @@
 <?php
-// Assign the value "Hello!" to the variable "greeting"
-$greeting = "Hello!";
-// Assign the value 8 to the variable "month"
-$month = 8;
-// Assign the value 2019 to the variable "year"
-$year = 2019;
+   if( $_POST["name"] || $_POST["age"] ) {
+      if (preg_match("/[^A-Za-z'-]/",$_POST['name'] )) {
+         die ("invalid name and name should be alpha");
+      }
+      
+      echo "Welcome ". $_POST['name']. "<br />";
+      echo "You are ". $_POST['age']. " years old.";
+      
+      exit();
+   }
 ?>
+<html>
+   <body>
+   
+      <form action = "<?php $_PHP_SELF ?>" method = "POST">
+         Name: <input type = "text" name = "name" />
+         Age: <input type = "text" name = "age" />
+         <input type = "submit" />
+      </form>
+      
+   </body>
+</html>
 
