@@ -1,24 +1,45 @@
-<?php
-// https://coursesweb.net/php-mysql/
+html>
 
-// Create a 160x80 image
-$width = 160;
-$height = 80;
-$im = imagecreatetruecolor($width, $height);
+<head>
+<title>Dynamic Background Color Change</title>
+</head>
 
-// sets a color for background
-$red = imagecolorallocate($im, 80, 120, 250);
-imagefill($im, 0, 0, $red);
+<body bgcolor="<?php
+if (isset($_POST['btn']))
+{
+$col=$_POST['t1'];
+if(isset($col))
+{
+echo $p=$col;
+}
+else
+{
+echo $p="#ffffff";
+}
+}
+?>">
 
-// sets and draw a green rectangle in left half
-$white = imagecolorallocate($im, 0, 245, 1);
-imagefilledrectangle($im, 0, 0, $width/2, $height, $white);
+<form action="" method="post" >
+<strong> Choose Color to Change Background :- </strong>
+<select name="t1">
+<option value="">Choose Color </option>
+<option value="#000000"> Black </option>
+<option value="#0000ff"> Blue </option>
+<option value="#a52a2a"> Brown </option>
+<option value="#00ffff"> Cyan </option>
+<option value="#006400"> Dark Green </option>
+<option value="#808080"> Grey </option>
+<option value="#008000"> Green </option>
+<option value="#ffa500"> Orange </option>
+<option value="#ffc0cb"> Pink </option>
+<option value="#800080"> Purple </option>
+<option value="#ff0000"> Red </option>
+<option value="#ffffff"> White </option>
+<option value="#ffff00"> Yellow </option>
+</select>
+<br>
+<input type="submit" name="btn" value="Submit">
+</form>
 
-// sets and adds a red text
-$text = 'CoursesWeb.net';
-$text_color = imagecolorallocate($im, 225, 0, 1);
-imagestring($im, 5, 12, $height/3, $text, $text_color);
-
-// Saves the image in 'imgs' folder
-imagepng($im, 'addons/php-mysql/image.png');
-?>
+</body>
+</html>
